@@ -1,0 +1,75 @@
+### Get all items
+GET http://localhost:3006/any
+Accept: application/json
+
+### Get a single item by ID
+GET http://localhost:3006/688286ebbbec21ec690da77c
+Accept: application/json
+
+### Create a new item
+POST http://localhost:3006/
+Content-Type: application/json
+
+{
+  "firstName": "Addy",
+  "lastName": "Bassey",
+  "age": 21,
+  "gender": "M",
+  "email": "addybasse@gmail.com",
+  "major": "Political Science",
+  "enrollmentYear": 2019
+}
+
+### Update an existing item by ID
+PUT http://localhost:3006/688287ddbbec21ec690da77d
+Content-Type: application/json
+
+{
+   "firstName": "Adeshina",
+    "lastName": "Joy",
+    "age": 21,
+    "gender": "M",
+    "email": "adeshinajoy@gmail.com",
+    "major": "Health Science",
+    "enrollmentYear": 2022
+}
+
+### Delete a item by ID
+DELETE http://localhost:3006/688ac5f515daedae6ab52514
+
+
+###new api
+### Get all grade
+GET http://localhost:3006/grades/getAllGrade2
+
+### Get a single item by ID
+GET http://localhost:3006/grades/getSingleGrade/688ac88e15daedae6ab52515
+
+
+### Create a new item
+POST http://localhost:3006/createGrade
+Content-Type: application/json
+
+{
+  "course": "cse310",
+  "grade": "B",
+  "studentName": "Terry Jay"
+}
+
+### Update an existing item by ID
+PUT http://localhost:3006/688287ddbbec21ec690da77d
+Content-Type: application/json
+
+{
+   "firstName": "Adeshina",
+    "lastName": "Joy",
+    "age": 21,
+    "gender": "M",
+    "email": "adeshinajoy@gmail.com",
+    "major": "Health Science",
+    "enrollmentYear": 2022
+}
+
+### Delete a item by ID
+DELETE http://localhost:3006/688a70aa9f5de2be52766803
+
