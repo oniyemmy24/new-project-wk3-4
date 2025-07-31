@@ -1,11 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/items');
 
-router.get('/', controller.getAllItems);
-router.get('/:id', controller.getSingleItem);
-router.post('/', controller.createItem);
-router.put('/:id', controller.updateItem);
-router.delete('/:id', controller.deleteItem);
+const itemsController = require('../controllers/items');
+const validation = require('../middleware/validate');
+
+router.get('/any', itemsController.getAll);
+
+router.get('/:id', itemsController.getSingle);
+
+router.post('/', itemsController.createItem);
+
+router.put('/:id', itemsController.updateItem);
+
+router.delete('/:id', itemsController.deleteItem);
 
 module.exports = router;

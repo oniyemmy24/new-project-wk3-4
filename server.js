@@ -1,17 +1,26 @@
-const express = require('express');
-const cors = require('cors');
-const app = express();
-const db = require('./data/database');
 require('dotenv').config();
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongodb = require('./data/database');
+const app = express();
 
-const port = process.env.PORT || 3001;
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  })
+app.use(bodyParser.json())
+app.use('/', require('./routes'));
+const port= process.env.PORT || 3006;
 
-app.use(cors());
-app.use(express.json());
+process.on('uncaughtException', (err, origin) => {
+  console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
+});
 
-app.use('/items', require('./routes/items'));
-app.use('/api-docs', require('./routes/swagger'));
-
-db.initDb().then(() => {
-  app.listen(port, () => console.log(`Server running on port ${port}`));
-}).catch((err) => console.error(err));
+mongodb.initDb((err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.listen(port);
+    console.log(`Connected to DB and listening on ${port}`);
+  }
+});
