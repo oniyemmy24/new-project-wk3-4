@@ -1,5 +1,5 @@
 ### Get all items
-GET http://localhost:3006/any
+GET http://localhost:3006/items
 Accept: application/json
 
 ### Get a single item by ID
@@ -7,15 +7,14 @@ GET http://localhost:3006/688286ebbbec21ec690da77c
 Accept: application/json
 
 ### Create a new item
-POST http://localhost:3006/
+POST http://localhost:3006/items
 Content-Type: application/json
 
 {
   "firstName": "Addy",
-  "lastName": "Bassey",
+  "lastName": "Dassy",
   "age": 21,
   "gender": "M",
-  "email": "addybasse@gmail.com",
   "major": "Political Science",
   "enrollmentYear": 2019
 }
@@ -46,7 +45,7 @@ GET http://localhost:3006/grades/getAllGrade2
 GET http://localhost:3006/grades/getSingleGrade/688ac88e15daedae6ab52515
 
 
-### Create a new item
+### Create a new grade
 POST http://localhost:3006/createGrade
 Content-Type: application/json
 

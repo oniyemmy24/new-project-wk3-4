@@ -1,5 +1,6 @@
 const { ObjectId } = require('mongodb');
 const mongodb = require('../data/database');
+const Item = require('../models/items.model');
 
 // GET all items
 const getAll = async (req, res) => {
@@ -39,6 +40,8 @@ const getSingle = async (req, res) => {
 const createItem = async (req, res) => {
   try {
     const item = {
+
+      
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       age: req.body.age,

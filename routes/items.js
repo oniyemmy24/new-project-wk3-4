@@ -2,9 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const itemsController = require('../controllers/items');
-const validation = require('../middleware/validate');
 
-router.get('/any', itemsController.getAll);
+router.get('/', itemsController.getAll);
 
 router.get('/:id', itemsController.getSingle);
 

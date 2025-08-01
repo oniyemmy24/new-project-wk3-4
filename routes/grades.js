@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const gradesController = require('../controllers/items');
-const validation = require('../middleware/validate');
 
 router.get('/getAllGrade2', gradesController.getAllGrade2);
 
